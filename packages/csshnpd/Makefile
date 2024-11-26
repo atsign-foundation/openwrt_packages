@@ -2,7 +2,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=csshnpd
 PKG_VERSION:=0.2.4
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PKG_SOURCE:=$(PKG_NAME)-c$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/atsign-foundation/noports/releases/download/c$(PKG_VERSION)
@@ -36,7 +36,7 @@ define Package/csshnpd/description
 endef
 
 define Package/csshnpd/conffiles
-	/etc/config/sshnpd
+/etc/config/sshnpd
 endef
 
 define Package/csshnpd/install	
