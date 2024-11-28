@@ -2,7 +2,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=csshnpd
 PKG_VERSION:=0.2.4
-PKG_RELEASE:=3
+PKG_RELEASE:=4
 
 PKG_SOURCE:=$(PKG_NAME)-c$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/atsign-foundation/noports/releases/download/c$(PKG_VERSION)
@@ -21,7 +21,7 @@ CMAKE_OPTIONS += \
 		-DBUILD_SHARED_LIBS=off \
 		-DBUILD_TESTS=off \
 		-DCMAKE_C_COMPILER=$(TARGET_CC) \
-		-DCMAKE_C_FLAGS="$(TARGET_CFLAGS) -Wno-calloc-transposed-args -Wno-error -pthread -lrt"
+		-DCMAKE_C_FLAGS="-fhonour-copts -Wno-calloc-transposed-args -Wno-error -pthread -lrt"
 
 define Package/csshnpd
 	SECTION:=net
