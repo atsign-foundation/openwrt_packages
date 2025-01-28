@@ -1,12 +1,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=csshnpd
-PKG_VERSION:=0.3.0
+PKG_VERSION:=0.4.0
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-c$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/atsign-foundation/noports/releases/download/c$(PKG_VERSION)
-PKG_HASH:=8e23d0c45188c9e095385d488b308c9107a42ae6974239ca913123344d96fd46
+PKG_HASH:=fcf03f8ed810c5e6acc98282e709197afef77e8dd998d5ad7ca34943ac484db0
 
 PKG_LICENSE:=BSD-3-Clause
 PKG_LICENSE_FILES:=LICENCE
@@ -45,8 +45,7 @@ define Package/csshnpd/install
 		$(1)/etc/config \
 		$(1)/etc/init.d
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/sshnpd/sshnpd $(1)/usr/bin/
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/sshnpd/atactivate $(1)/usr/bin/
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/sshnpd/at_auth_cli $(1)/usr/bin/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/sshnpd/at_activate $(1)/usr/bin/
 	$(INSTALL_BIN) files/csshnpd.init $(1)/etc/init.d/sshnpd
 	$(INSTALL_CONF) files/csshnpd.config \
 	    $(1)/etc/config/sshnpd
